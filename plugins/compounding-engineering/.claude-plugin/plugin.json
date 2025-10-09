@@ -4,76 +4,20 @@
   "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 15 specialized agents and 6 commands.",
   "author": {
     "name": "Kieran Klaassen",
+    "email": "kieran@every.to",
     "url": "https://github.com/kieranklaassen"
   },
-  "homepage": "https://github.com/EveryInc/compounding-engineering",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EveryInc/compounding-engineering.git"
-  },
+  "homepage": "https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it",
+  "repository": "https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it",
+  "license": "MIT",
   "keywords": [
     "ai-powered",
     "compounding-engineering",
     "workflow-automation",
     "code-review",
     "quality",
-    "knowledge-management",
-    "agents"
+    "knowledge-management"
   ],
-  "license": "MIT",
-  "every-env": {
-    "compatible": true,
-    "min_version": "1.0.0"
-  },
-  "dependencies": {
-    "claude-code": ">=1.0.0"
-  },
   "agents": "./agents/",
-  "commands": "./commands/",
-  "settings": {
-    "permissions": {
-      "bash_commands": [
-        "ast-grep",
-        "bin/brakeman",
-        "bin/dev",
-        "bin/rails",
-        "bin/rubocop",
-        "bundle",
-        "find",
-        "gem",
-        "gh",
-        "git",
-        "grep",
-        "mkdir",
-        "node",
-        "npm",
-        "psql",
-        "rake",
-        "rg",
-        "rm",
-        "ruby",
-        "yarn"
-      ],
-      "web_fetch_domains": [
-        "docs.anthropic.com",
-        "discuss.rubyonrails.org",
-        "edgeguides.rubyonrails.org",
-        "github.com",
-        "localhost"
-      ]
-    }
-  },
-  "configuration": {
-    "default_agent": "claude",
-    "project_type": "rails",
-    "signals": [
-      "package.json",
-      "Gemfile",
-      "bin/rails",
-      "config/application.rb",
-      "app/controllers",
-      "app/models",
-      "app/views"
-    ]
-  }
+  "commands": "./commands/"
 }
