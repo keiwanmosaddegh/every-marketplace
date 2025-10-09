@@ -17,7 +17,5 @@
     "code-review",
     "quality",
     "knowledge-management"
-  ],
-  "agents": "./agents/",
-  "commands": "./commands/"
+  ]
 }
