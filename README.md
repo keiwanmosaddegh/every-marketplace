@@ -7,7 +7,7 @@ The official Every marketplace where engineers from Every.to share their workflo
 Run Claude and add the marketplace:
 
 ```
-/plugin marketplace add EveryInc/every-marketplace
+/plugin marketplace add https://github.com/EveryInc/every-marketplace
 ```
 
 Then install the plugin:
