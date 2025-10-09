@@ -29,21 +29,26 @@ AI-powered development tools that get smarter with every use. Includes 21 specia
 - Documentation generation and maintenance
 - Security, performance, and architecture analysis
 
-[View plugin details](./plugins/compounding-engineering/README.md)
+**Philosophy:**
 
-## Philosophy
+Each unit of engineering work makes subsequent units of work easier—not harder.
 
-This marketplace features plugins that embody **compounding engineering**: each unit of engineering work makes subsequent units of work easier—not harder.
+```mermaid
+graph LR
+    A[Plan<br/>Plan it out<br/>in detail] --> B[Delegate<br/>Do the work]
+    B --> C[Assess<br/>Make sure<br/>it works]
+    C --> D[Codify<br/>Record<br/>learnings]
+    D --> A
 
-Every plugin follows the four-step process:
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+```
+
 1. **Plan** → Break down tasks with clear steps
 2. **Delegate** → Execute with AI assistance
 3. **Assess** → Test thoroughly and verify quality
 4. **Codify** → Record learnings for next time
 
-## Support
-
-- [Report issues](https://github.com/EveryInc/every-marketplace/issues)
-- [View documentation](https://github.com/EveryInc/every-marketplace/wiki)
-
-Built with [Claude Code](https://claude.ai/code) by [Every Inc.](https://github.com/EveryInc)
+[View plugin details](./plugins/compounding-engineering/README.md)
