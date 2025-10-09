@@ -46,15 +46,56 @@ Ensure that the worktree is set up correctly and that the PR is checked out. ONL
 
 </task_list>
 
+#### Detect Project Type
+
+<thinking>
+Determine the project type by analyzing the codebase structure and files.
+This will inform which language-specific reviewers to use.
+</thinking>
+
+<project_type_detection>
+
+Check for these indicators to determine project type:
+
+**Rails Project**:
+- `Gemfile` with `rails` gem
+- `config/application.rb`
+- `app/` directory structure
+
+**TypeScript Project**:
+- `tsconfig.json`
+- `package.json` with TypeScript dependencies
+- `.ts` or `.tsx` files
+
+**Python Project**:
+- `requirements.txt` or `pyproject.toml`
+- `.py` files
+- `setup.py` or `poetry.lock`
+
+Based on detection, set appropriate reviewers for parallel execution.
+
+</project_type_detection>
+
 #### Parallel Agents to review the PR:
 
 <parallel_tasks>
 
-Run ALL or most of these agents at the same time:
+Run ALL or most of these agents at the same time, adjusting language-specific reviewers based on project type:
 
+**Language-Specific Reviewers (choose based on project type)**:
+
+For Rails projects:
 1. Task kieran-rails-reviewer(PR content)
 2. Task dhh-rails-reviewer(PR title)
 3. If turbo is used: Task rails-turbo-expert(PR content)
+
+For TypeScript projects:
+1. Task kieran-typescript-reviewer(PR content)
+
+For Python projects:
+1. Task kieran-python-reviewer(PR content)
+
+**Universal Reviewers (run for all project types)**:
 4. Task git-history-analyzer(PR content)
 5. Task dependency-detective(PR content)
 6. Task pattern-recognition-specialist(PR content)

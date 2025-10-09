@@ -93,8 +93,14 @@ Implement #$ARGUMENTS following these steps:
    - Ensure code follows CLAUDE.md conventions
 
 4. Verify
-   - Run tests: `bin/rails test`
-   - Run linter: `bundle exec standardrb`
+   - Run tests:
+     - Rails: `bin/rails test` or `bundle exec rspec`
+     - TypeScript: `npm test` or `yarn test` (Jest/Vitest)
+     - Python: `pytest` or `python -m pytest`
+   - Run linter:
+     - Rails: `bundle exec standardrb` or `bundle exec rubocop`
+     - TypeScript: `npm run lint` or `eslint .`
+     - Python: `ruff check .` or `flake8`
    - Check changes with git diff
 
 5. Commit (optional)
