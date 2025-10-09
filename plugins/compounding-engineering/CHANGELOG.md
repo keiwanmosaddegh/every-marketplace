@@ -87,10 +87,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/workflows/watch` - Monitor changes
 - `/workflows/work` - Guided development workflow
 
-#### Hooks (2 total)
-- `block-main-push.rb` - Prevents accidental main branch pushes
-- `run-linter.rb` - Automated linter execution
-
 #### Plugin Infrastructure
 - Complete plugin.json manifest with metadata
 - Comprehensive README with usage examples

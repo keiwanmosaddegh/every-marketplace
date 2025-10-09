@@ -1,7 +1,7 @@
 {
   "name": "compounding-engineering",
   "version": "1.0.0",
-  "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 15 specialized agents, 6 commands, and automated hooks.",
+  "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 15 specialized agents and 6 commands.",
   "author": {
     "name": "Kieran Klaassen",
     "url": "https://github.com/kieranklaassen"
@@ -31,7 +31,7 @@
   "components": {
     "agents": 15,
     "commands": 6,
-    "hooks": 2
+    "hooks": 0
   },
   "agents": {
     "reviewers": [
@@ -130,22 +130,6 @@
       "plan",
       "review",
       "resolve_todo_parallel"
-    ]
-  },
-  "hooks": {
-    "pre_tool_use": [
-      {
-        "name": "block-main-push",
-        "description": "Prevents accidental pushes to main branch",
-        "matcher": "Bash",
-        "command": "hooks/block-main-push.rb"
-      },
-      {
-        "name": "run-linter",
-        "description": "Runs linter before certain operations",
-        "matcher": "Bash",
-        "command": "hooks/run-linter.rb"
-      }
     ]
   },
   "settings": {
