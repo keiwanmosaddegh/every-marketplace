@@ -2,55 +2,25 @@
 
 The official plugin marketplace for Claude Code extensions. Get access to AI-powered development tools that embody the compounding engineering philosophy.
 
-## Quick Start
+## Quick start
 
-### Add the Marketplace
+Run Claude and add the marketplace:
 
-Add this marketplace to your Claude Code configuration:
-
-```bash
-# Edit your Claude Code settings
-claude config edit
+```
+/plugin marketplace add EveryInc/every-marketplace
 ```
 
-Add the marketplace to your `marketplaces` array:
+Then install the plugin:
 
-```json
-{
-  "marketplaces": [
-    {
-      "name": "every-marketplace",
-      "source": "https://github.com/EveryInc/every-marketplace"
-    }
-  ]
-}
+```
+/plugin install compounding-engineering
 ```
 
-Or use the CLI:
+## Available plugins
 
-```bash
-claude marketplace add https://github.com/EveryInc/every-marketplace
-```
+### Compounding engineering
 
-### Install the Compounding Engineering Plugin
-
-Once the marketplace is added, install the plugin:
-
-```bash
-claude plugin install compounding-engineering
-```
-
-Or install directly from the repository:
-
-```bash
-claude plugin install https://github.com/EveryInc/every-marketplace/tree/main/plugins/compounding-engineering
-```
-
-## Available Plugins
-
-### Compounding Engineering
-
-AI-powered development tools that get smarter with every use. Includes 21 specialized agents, 24 commands, 5 workflows, and 2 automated hooks.
+AI-powered development tools that get smarter with every use. Includes 21 specialized agents, 24 commands, five workflows, and two automated hooks.
 
 **Features:**
 - Code review with multiple expert perspectives
@@ -59,7 +29,7 @@ AI-powered development tools that get smarter with every use. Includes 21 specia
 - Documentation generation and maintenance
 - Security, performance, and architecture analysis
 
-[View Plugin Details](./plugins/compounding-engineering/README.md)
+[View plugin details](./plugins/compounding-engineering/README.md)
 
 ## Philosophy
 
@@ -73,7 +43,7 @@ Every plugin follows the four-step process:
 
 ## Support
 
-- [Report Issues](https://github.com/EveryInc/every-marketplace/issues)
-- [View Documentation](https://github.com/EveryInc/every-marketplace/wiki)
+- [Report issues](https://github.com/EveryInc/every-marketplace/issues)
+- [View documentation](https://github.com/EveryInc/every-marketplace/wiki)
 
 Built with [Claude Code](https://claude.ai/code) by [Every Inc.](https://github.com/EveryInc)

@@ -50,6 +50,7 @@ When working on this repository, follow the compounding engineering process:
 When agents or commands are added/removed:
 
 1. **Scan for actual files:**
+
    ```bash
    # Count agents
    ls plugins/compounding-engineering/agents/*.md | wc -l
@@ -59,12 +60,14 @@ When agents or commands are added/removed:
    ```
 
 2. **Update plugin.json** at `plugins/compounding-engineering/.claude-plugin/plugin.json`:
+
    - Update `components.agents` count
    - Update `components.commands` count
    - Update `agents` object to reflect which agents exist
    - Update `commands` object to reflect which commands exist
 
 3. **Update plugin README** at `plugins/compounding-engineering/README.md`:
+
    - Update agent/command counts in the intro
    - Update the agent/command lists to match what exists
 
@@ -101,6 +104,7 @@ The marketplace.json follows the official Claude Code spec:
 ```
 
 **Only include fields that are in the official spec.** Do not add custom fields like:
+
 - `downloads`, `stars`, `rating` (display-only)
 - `categories`, `featured_plugins`, `trending` (not in spec)
 - `type`, `verified`, `featured` (not in spec)
@@ -141,11 +145,13 @@ Each plugin has its own plugin.json with detailed metadata:
 ### Test Locally
 
 1. Install the marketplace locally:
+
    ```bash
    claude /plugin marketplace add /Users/yourusername/every-marketplace
    ```
 
 2. Install the plugin:
+
    ```bash
    claude /plugin install compounding-engineering
    ```
@@ -159,6 +165,7 @@ Each plugin has its own plugin.json with detailed metadata:
 ### Validate JSON
 
 Before committing, ensure JSON files are valid:
+
 ```bash
 cat .claude-plugin/marketplace.json | jq .
 cat plugins/compounding-engineering/.claude-plugin/plugin.json | jq .
@@ -183,6 +190,7 @@ cat plugins/compounding-engineering/.claude-plugin/plugin.json | jq .
 ### Updating Tags/Keywords
 
 Tags should reflect the compounding engineering philosophy:
+
 - Use: `ai-powered`, `compounding-engineering`, `workflow-automation`, `knowledge-management`
 - Avoid: Framework-specific tags unless the plugin is framework-specific
 
@@ -197,17 +205,18 @@ Follow these patterns for commit messages:
 - `Simplify [component] to [improvement]` - Refactoring
 
 Include the Claude Code footer:
+
 ```
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
-## Resources
+## Resources to search for when needing more information
 
 - [Claude Code Plugin Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
 - [Plugin Marketplace Documentation](https://docs.claude.com/en/docs/claude-code/plugin-marketplaces)
-- [Compounding Engineering Plugin](https://github.com/EveryInc/compounding-engineering-plugin)
+- [Plugin Reference](https://docs.claude.com/en/docs/claude-code/plugins-reference)
 
 ## Key Learnings
 
@@ -216,14 +225,9 @@ _This section captures important learnings as we work on this repository._
 ### 2025-10-09: Simplified marketplace.json to match official spec
 
 The initial marketplace.json included many custom fields (downloads, stars, rating, categories, trending) that aren't part of the Claude Code specification. We simplified to only include:
+
 - Required: `name`, `owner`, `plugins`
 - Optional: `metadata` (with description and version)
 - Plugin entries: `name`, `description`, `version`, `author`, `homepage`, `tags`, `source`
 
 **Learning:** Stick to the official spec. Custom fields may confuse users or break compatibility with future versions.
-
-### 2025-10-09: Updated tags to reflect philosophy over technology
-
-Changed from Rails-specific tags (`rails`, `ruby`, `testing`) to philosophy-driven tags (`ai-powered`, `compounding-engineering`, `workflow-automation`, `knowledge-management`). This better represents what the plugin actually does.
-
-**Learning:** Tags should describe the value proposition, not just the technology stack.
