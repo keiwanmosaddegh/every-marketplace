@@ -1,6 +1,6 @@
 # Every Marketplace
 
-The official plugin marketplace for Claude Code extensions. Get access to AI-powered development tools that embody the compounding engineering philosophy.
+The official Every marketplace where engineers from Every.to share their workflows. Currently featuring the Compounding Engineering Philosophy plugin.
 
 ## Quick start
 
