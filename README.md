@@ -20,9 +20,10 @@ Then install the plugin:
 
 ### Compounding engineering
 
-AI-powered development tools that get smarter with every use. Includes 21 specialized agents, 24 commands, five workflows, and two automated hooks.
+AI-powered development tools that get smarter with every use. Includes specialized agents, commands, and five workflows.
 
 **Features:**
+
 - Code review with multiple expert perspectives
 - Automated testing and bug reproduction
 - PR management and parallel comment resolution
