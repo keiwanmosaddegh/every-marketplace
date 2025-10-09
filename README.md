@@ -51,4 +51,4 @@ graph LR
 3. **Assess** → Test thoroughly and verify quality
 4. **Codify** → Record learnings for next time
 
-[View plugin details](./plugins/compounding-engineering/README.md)
+[Read more](https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it)
