@@ -4,6 +4,7 @@ The official Every marketplace where engineers from Every.to share their workflo
 
 ## Quick start
 
+### Standard Installation
 Run Claude and add the marketplace:
 
 ```
@@ -15,6 +16,13 @@ Then install the plugin:
 ```
 /plugin install compounding-engineering
 ```
+### One-Command Installation
+Use the [Claude Plugins CLI](https://claude-plugins.dev) to skip the marketplace setup:
+```bash
+npx claude-plugins install @EveryInc/every-marketplace/compounding-engineering
+```
+
+This automatically adds the marketplace and installs the plugin in a single step.
 
 ## Available plugins
 
