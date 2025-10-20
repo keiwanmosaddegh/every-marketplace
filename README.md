@@ -65,7 +65,7 @@ The plugin follows a three-step workflow that makes development compound:
 
 ### 1. Plan: Turn Ideas Into Structured Issues
 
-Use `/plan` to transform feature descriptions into comprehensive GitHub issues.
+Use `/compounding-engineering:plan` to transform feature descriptions into comprehensive GitHub issues.
 
 **What it does:**
 - Researches your codebase to find similar patterns and conventions
@@ -77,7 +77,7 @@ Use `/plan` to transform feature descriptions into comprehensive GitHub issues.
 
 ### 2. Work: Execute Plans Systematically
 
-Use `/work` to execute work plans with isolated worktrees and systematic task tracking.
+Use `/compounding-engineering:work` to execute work plans with isolated worktrees and systematic task tracking.
 
 **What it does:**
 - Creates isolated git worktrees for clean development
@@ -89,7 +89,7 @@ Use `/work` to execute work plans with isolated worktrees and systematic task tr
 
 ### 3. Review: Ensure Quality Before Merging
 
-Use `/review` to perform exhaustive multi-agent code reviews.
+Use `/compounding-engineering:review` to perform exhaustive multi-agent code reviews.
 
 **What it does:**
 - Checks out your PR in an isolated worktree for deep analysis
@@ -105,7 +105,7 @@ Use `/review` to perform exhaustive multi-agent code reviews.
 
 ```bash
 # Create a detailed GitHub issue from a feature description
-claude /plan "Add user profile avatars with S3 upload and automatic resizing"
+claude /compounding-engineering:plan "Add user profile avatars with S3 upload and automatic resizing"
 ```
 
 The command will:
@@ -123,7 +123,7 @@ You can choose detail levels:
 
 ```bash
 # Execute a plan document systematically
-claude /work path/to/plan.md
+claude /compounding-engineering:work path/to/plan.md
 ```
 
 The command will:
@@ -137,13 +137,13 @@ The command will:
 
 ```bash
 # Review the latest PR
-claude /review
+claude /compounding-engineering:review
 
 # Review a specific PR
-claude /review 123
+claude /compounding-engineering:review 123
 
 # Review from a GitHub URL
-claude /review https://github.com/user/repo/pull/123
+claude /compounding-engineering:review https://github.com/user/repo/pull/123
 ```
 
 The command will:
@@ -161,22 +161,22 @@ The command will:
 
 The plugin includes six commands for different stages of development:
 
-### `/plan [feature description]`
+### `/compounding-engineering:plan [feature description]`
 Creates detailed GitHub issues from feature descriptions. Includes research, acceptance criteria, and implementation guidance.
 
-### `/work [plan file]`
+### `/compounding-engineering:work [plan file]`
 Executes work plans systematically with worktrees, todos, and continuous validation.
 
-### `/review [PR number or URL]`
+### `/compounding-engineering:review [PR number or URL]`
 Performs exhaustive multi-agent code reviews with security, performance, and architecture analysis.
 
-### `/triage`
+### `/compounding-engineering:triage`
 Presents findings one by one for review and converts approved items into trackable todos.
 
-### `/resolve_todo_parallel`
+### `/compounding-engineering:resolve_todo_parallel`
 Resolves multiple todos in parallel with systematic execution and quality checks.
 
-### `/generate_command`
+### `/compounding-engineering:generate_command`
 Generates new Claude Code commands from descriptions.
 
 ## All Agents
@@ -214,17 +214,17 @@ The plugin includes 17 specialized agents that provide expertise in different ar
 
 Traditional development tools help you work faster. Compounding engineering tools make future work easier.
 
-**Every `/plan` you create:**
+**Every `/compounding-engineering:plan` you create:**
 - Documents patterns that inform the next plan
 - Establishes conventions that reduce planning time
 - Builds institutional knowledge
 
-**Every `/work` execution:**
+**Every `/compounding-engineering:work` execution:**
 - Creates reusable components
 - Refines your testing approach
 - Improves your development process
 
-**Every `/review` you run:**
+**Every `/compounding-engineering:review` you run:**
 - Catches issues earlier
 - Documents learnings for the team
 - Raises the quality bar systematically
@@ -241,16 +241,16 @@ The plugin embodies these compounding engineering principles:
 
 **Quality compounds:** High-quality code is easier to modify. The multi-agent review system ensures every change meets your quality bar.
 
-**Systematic beats heroic:** Consistent processes beat individual heroics. The `/work` command executes plans systematically, with continuous validation.
+**Systematic beats heroic:** Consistent processes beat individual heroics. The `/compounding-engineering:work` command executes plans systematically, with continuous validation.
 
 **Knowledge should be codified:** Learnings should be captured and reused. The research agents analyze your codebase to apply your own patterns back to you.
 
 ## Getting Started
 
 1. Install the plugin using one of the methods above
-2. Run `/plan` on your next feature idea
-3. Use `/work` to execute the plan
-4. Run `/review` before merging
+2. Run `/compounding-engineering:plan` on your next feature idea
+3. Use `/compounding-engineering:work` to execute the plan
+4. Run `/compounding-engineering:review` before merging
 5. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
