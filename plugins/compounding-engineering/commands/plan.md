@@ -38,7 +38,6 @@ Think like a product manager - what would make this issue clear and actionable? 
 **Title & Categorization:**
 
 - [ ] Draft clear, searchable issue title using conventional format (e.g., `feat:`, `fix:`, `docs:`)
-- [ ] Identify appropriate labels from repository's label set (`gh label list`)
 - [ ] Determine issue type: enhancement, bug, refactor
 
 **Stakeholder Analysis:**
@@ -347,9 +346,12 @@ end \`\`\`
 
 Present the complete issue content within `<github_issue>` tags, ready for GitHub CLI:
 
-```bash
-gh issue create --title "[TITLE]" --body "[CONTENT]" --label "[LABELS]"
-```
+**Write the plan** to `thoughts/plans/YYYY-MM-DD-description.md`
+- Format: `YYYY-MM-DD-ENG-XXXX-description.md` where:
+  - YYYY-MM-DD is today's date
+  - description is a brief kebab-case description
+- Example:
+  - `2025-01-08-improve-error-handling.md`
 
 ## Thinking Approaches
 
