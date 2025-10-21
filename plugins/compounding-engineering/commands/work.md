@@ -14,69 +14,13 @@ This command helps you analyze a work document (plan, Markdown file, specificati
 
 ## Main Tasks
 
-### 1. Setup Development Environment
-
-- Ensure main branch is up to date
-- Create feature branch with descriptive name
-- Setup worktree for isolated development
-- Configure development environment
-
-### 2. Analyze Input Document
+### 1. Analyze Input Document
 
 <input_document> #$ARGUMENTS </input_document>
 
 ## Execution Workflow
 
-### Phase 1: Environment Setup
-
-1. **Update Main Branch**
-
-   ```bash
-   git checkout main
-   git pull origin main
-   ```
-
-2. **Create Feature Branch and Worktree**
-
-   - Determine appropriate branch name from document
-   - Get the root directory of the Git repository:
-
-   ```bash
-   git_root=$(git rev-parse --show-toplevel)
-   ```
-
-   - Create worktrees directory if it doesn't exist:
-
-   ```bash
-   mkdir -p "$git_root/.worktrees"
-   ```
-
-   - Add .worktrees to .gitignore if not already there:
-
-   ```bash
-   if ! grep -q "^\.worktrees$" "$git_root/.gitignore"; then
-     echo ".worktrees" >> "$git_root/.gitignore"
-   fi
-   ```
-
-   - Create the new worktree with feature branch:
-
-   ```bash
-   git worktree add -b feature-branch-name "$git_root/.worktrees/feature-branch-name" main
-   ```
-
-   - Change to the new worktree directory:
-
-   ```bash
-   cd "$git_root/.worktrees/feature-branch-name"
-   ```
-
-3. **Verify Environment**
-   - Confirm in correct worktree directory
-   - Install dependencies if needed
-   - Run initial tests to ensure clean state
-
-### Phase 2: Document Analysis and Planning
+### Phase 1: Document Analysis and Planning
 
 1. **Read Input Document**
 
@@ -135,16 +79,3 @@ This command helps you analyze a work document (plan, Markdown file, specificati
    - Execute final lint and typecheck
    - Check all deliverables present
    - Ensure documentation updated
-
-2. **Prepare for Submission**
-
-   - Stage and commit all changes
-   - Write commit messages
-   - Push feature branch to remote
-   - Create detailed pull request
-
-3. **Create Pull Request**
-   ```bash
-   git push -u origin feature-branch-name
-   gh pr create --title "Feature: [Description]" --body "[Detailed description]"
-   ```
