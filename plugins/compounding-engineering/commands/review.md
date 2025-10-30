@@ -1,6 +1,6 @@
 # Review Command
 
-<command_purpose> Perform exhaustive code reviews using multi-agent analysis, ultra-thinking, and Git worktrees for deep local inspection. </command_purpose>
+<command_purpose> Perform exhaustive code reviews using multi-agent analysis, and ultra-thinking for deep local inspection. </command_purpose>
 
 ## Introduction
 
@@ -9,22 +9,17 @@
 ## Prerequisites
 
 <requirements>
-- Git repository with GitHub CLI (`gh`) installed and authenticated
-- Clean main/master branch
-- Proper permissions to create worktrees and access the repository
 - For document reviews: Path to a markdown file or document
 </requirements>
 
 ## Main Tasks
 
-### 1. Worktree Creation and Branch Checkout (ALWAYS FIRST)
+### 1. Branch Checkout (ALWAYS FIRST)
 
 <review_target> #$ARGUMENTS </review_target>
 
-<critical_requirement> MUST create worktree FIRST to enable local code analysis. No exceptions. </critical_requirement>
-
 <thinking>
-First, I need to determine the review target type and set up the worktree.
+First, I need to determine the review target type.
 This enables all subsequent agents to analyze actual code, not just diffs.
 </thinking>
 
@@ -32,17 +27,13 @@ This enables all subsequent agents to analyze actual code, not just diffs.
 
 <task_list>
 
-- [ ] Determine review type: PR number (numeric), GitHub URL, file path (.md), or empty (latest PR)
-- [ ] Create worktree directory structure at `$git_root/.worktrees/reviews/pr-$identifier`
-- [ ] Check out PR branch in isolated worktree using `gh pr checkout`
-- [ ] Navigate to worktree - ALL subsequent analysis happens here
+- [ ] Determine review type: Branch name, PR number (numeric), GitHub URL, file path (.md), or empty (current branch)
+- [ ] Check out branch using `git checkout BRANCH_NAME`
 
-- Fetch PR metadata using `gh pr view --json` for title, body, files, linked issues
-- Clone PR branch into worktree with full history `gh pr checkout $identifier`
 - Set up language-specific analysis tools
 - Prepare security scanning environment
 
-Ensure that the worktree is set up correctly and that the PR is checked out. ONLY then proceed to the next step.
+Ensure that the branch is checked out. ONLY then proceed to the next step.
 
 </task_list>
 
@@ -76,7 +67,7 @@ Based on detection, set appropriate reviewers for parallel execution.
 
 </project_type_detection>
 
-#### Parallel Agents to review the PR:
+#### Parallel Agents to review the branch:
 
 <parallel_tasks>
 
@@ -85,26 +76,26 @@ Run ALL or most of these agents at the same time, adjusting language-specific re
 **Language-Specific Reviewers (choose based on project type)**:
 
 For Rails projects:
-1. Task kieran-rails-reviewer(PR content)
-2. Task dhh-rails-reviewer(PR title)
-3. If turbo is used: Task rails-turbo-expert(PR content)
+1. Task kieran-rails-reviewer(branch content)
+2. Task dhh-rails-reviewer(branch title)
+3. If turbo is used: Task rails-turbo-expert(branch content)
 
 For TypeScript projects:
-1. Task kieran-typescript-reviewer(PR content)
+1. Task kieran-typescript-reviewer(branch content)
 
 For Python projects:
-1. Task kieran-python-reviewer(PR content)
+1. Task kieran-python-reviewer(branch content)
 
 **Universal Reviewers (run for all project types)**:
-4. Task git-history-analyzer(PR content)
-5. Task dependency-detective(PR content)
-6. Task pattern-recognition-specialist(PR content)
-7. Task architecture-strategist(PR content)
-8. Task code-philosopher(PR content)
-9. Task security-sentinel(PR content)
-10. Task performance-oracle(PR content)
-11. Task devops-harmony-analyst(PR content)
-12. Task data-integrity-guardian(PR content)
+4. Task git-history-analyzer(branch content)
+5. Task dependency-detective(branch content)
+6. Task pattern-recognition-specialist(branch content)
+7. Task architecture-strategist(branch content)
+8. Task code-philosopher(branch content)
+9. Task security-sentinel(branch content)
+10. Task performance-oracle(branch content)
+11. Task devops-harmony-analyst(branch content)
+12. Task data-integrity-guardian(branch content)
 
 </parallel_tasks>
 
